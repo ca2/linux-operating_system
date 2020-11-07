@@ -1,0 +1,12 @@
+[submodule "platform-linux"]
+	path = platform-linux
+	url = ../platform-linux
+[submodule "storage-linux"]
+	path = storage-linux
+	url = ../storage-linux
+[submodule "third-linux"]
+	path = third-linux
+	url = ../third-linux
+[submodule "tool-linux"]
+	path = tool-linux
+	url = ../tool-linux
