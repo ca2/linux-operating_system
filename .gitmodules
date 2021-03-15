@@ -10,3 +10,6 @@
 [submodule "tool-linux"]
 	path = tool-linux
 	url = ../tool-linux
+[submodule "platform-posix"]
+	path = platform-posix
+	url = ../platform-posix
