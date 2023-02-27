@@ -13,6 +13,3 @@
 [submodule "operating-system-posix"]
 	path = operating-system-posix
 	url = ../operating-system-posix
-[submodule "port/id3lib"]
-	path = port/id3lib
-	url = ../../cpp-port/id3lib
