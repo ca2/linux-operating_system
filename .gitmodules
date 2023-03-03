@@ -1,15 +1,6 @@
 [submodule "operating-system-linux"]
 	path = operating-system-linux
 	url = ../operating-system-linux
-[submodule "storage-linux"]
-	path = storage-linux
-	url = ../storage-linux
-[submodule "third-linux"]
-	path = third-linux
-	url = ../third-linux
-[submodule "tool-linux"]
-	path = tool-linux
-	url = ../tool-linux
 [submodule "operating-system-posix"]
 	path = operating-system-posix
 	url = ../operating-system-posix
