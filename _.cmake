@@ -1,5 +1,5 @@
 #cmake_minimum_required(VERSION 3.16)
-#project(_linux-operating-system)
+#project(_linux-operating_system)
 
 
 #set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CMAKE_COMMAND} -E time")
@@ -323,8 +323,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)
 
 
 link_directories(${LIBRARY_OUTPUT_PATH})
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/operating-system/storage-${OPERATING_SYSTEM_NAME}/library/x64/basis)
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/operating-system/storage-${OPERATING_SYSTEM_NAME}/third/library/x64/basis)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/operating_system/storage-${OPERATING_SYSTEM_NAME}/library/x64/basis)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/operating_system/storage-${OPERATING_SYSTEM_NAME}/third/library/x64/basis)
 
 
 
@@ -337,16 +337,16 @@ include_directories(${WORKSPACE_FOLDER}/source/app/include)
 include_directories(${WORKSPACE_FOLDER}/source/include)
 include_directories(${WORKSPACE_FOLDER}/port/_)
 include_directories(${WORKSPACE_FOLDER}/port/include)
-include_directories(${WORKSPACE_FOLDER}/operating-system)
+include_directories(${WORKSPACE_FOLDER}/operating_system)
 if(OPERATING_SYSTEM_POSIX)
-    include_directories(${WORKSPACE_FOLDER}/operating-system/operating-system-posix)
-    include_directories(${WORKSPACE_FOLDER}/operating-system/operating-system-posix/include)
+    include_directories(${WORKSPACE_FOLDER}/operating_system/operating_system-posix)
+    include_directories(${WORKSPACE_FOLDER}/operating_system/operating_system-posix/include)
 endif()
-include_directories(${WORKSPACE_FOLDER}/operating-system/operating-system-${OPERATING_SYSTEM_NAME})
-include_directories(${WORKSPACE_FOLDER}/operating-system/operating-system-${OPERATING_SYSTEM_NAME}/include)
-include_directories(${WORKSPACE_FOLDER}/operating-system/third-${OPERATING_SYSTEM_NAME}/include)
-include_directories(${WORKSPACE_FOLDER}/operating-system/third-${OPERATING_SYSTEM_NAME}/third/include)
-include_directories(${WORKSPACE_FOLDER}/operating-system/third-${OPERATING_SYSTEM_NAME}/third/include/include)
+include_directories(${WORKSPACE_FOLDER}/operating_system/operating_system-${OPERATING_SYSTEM_NAME})
+include_directories(${WORKSPACE_FOLDER}/operating_system/operating_system-${OPERATING_SYSTEM_NAME}/include)
+include_directories(${WORKSPACE_FOLDER}/operating_system/third-${OPERATING_SYSTEM_NAME}/include)
+include_directories(${WORKSPACE_FOLDER}/operating_system/third-${OPERATING_SYSTEM_NAME}/third/include)
+include_directories(${WORKSPACE_FOLDER}/operating_system/third-${OPERATING_SYSTEM_NAME}/third/include/include)
 
 
 set(INCLUDE_DRAW2D_CAIRO TRUE)
