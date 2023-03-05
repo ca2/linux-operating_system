@@ -1,6 +1,6 @@
-[submodule "operating-system-linux"]
-	path = operating-system-linux
-	url = ../operating-system-linux
-[submodule "operating-system-posix"]
-	path = operating-system-posix
-	url = ../operating-system-posix
+[submodule "operating_system-linux"]
+	path = operating_system-linux
+	url = ../operating_system-linux
+[submodule "operating_system-posix"]
+	path = operating_system-posix
+	url = ../operating_system-posix
