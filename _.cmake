@@ -101,7 +101,9 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
 
         set(DONT_USE_PKG_CONFIG FALSE)
 
-        add_compile_definitions(RASPBIAN)
+        add_compile_definitions(RASPBERRYPIOS)
+
+        message(STATUS "RASPBERRYPIOS defined!!")
 
     else()
 
