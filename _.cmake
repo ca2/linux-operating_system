@@ -31,17 +31,61 @@ endif()
 
 message(STATUS "DESKTOP_ENVIRONMENT_NAME is ${DESKTOP_ENVIRONMENT_NAME}")
 
-add_compile_options("$<$<CONFIG:DEBUG>:-DDEBUG>")
-
 set(UNDERSCORE_OPERATING_SYSTEM $ENV{__SYSTEM_UNDERSCORE_OPERATING_SYSTEM})
 set(SLASHED_OPERATING_SYSTEM $ENV{__SYSTEM_SLASHED_OPERATING_SYSTEM})
 set(DISTRO $ENV{__SYSTEM_DISTRO})
 set(DISTRO_RELEASE $ENV{__SYSTEM_DISTRO_RELEASE})
 
 
+string(TOLOWER ${CMAKE_BUILD_TYPE} tolower_cmake_build_type)
 
 
-set(default_gpu "gpu_opengl")
+message(STATUS "tolower_cmake_build_type = ${tolower_cmake_build_type}")
+
+
+if(${tolower_cmake_build_type} STREQUAL "debug")
+
+    message(STATUS "Debug Build!!")
+
+    add_compile_definitions(DEBUG)
+
+    message(STATUS "DEBUG compile definition set!!")
+
+elseif(${tolower_cmake_build_type} STREQUAL "relwithdebinfo")
+
+    message(STATUS "RelWithDebInfo Build!!")
+
+    add_compile_definitions(DEBUG)
+
+    message(STATUS "DEBUG compile definition set!!")
+
+elseif(${tolower_cmake_build_type} STREQUAL "release")
+
+    message(STATUS "Release Build!!")
+
+    add_compile_definitions(NDEBUG)
+
+    message(STATUS "NDEBUG compile definition set!!")
+
+elseif(${tolower_cmake_build_type} STREQUAL "minsizerel")
+
+    message(STATUS "MinSizeRel Build!!")
+
+    add_compile_definitions(NDEBUG)
+
+    message(STATUS "NDEBUG compile definition set!!")
+
+else()
+
+    message(STATUS "\"${CMAKE_BUILD_TYPE}\" Build!!")
+
+    add_compile_definitions(DEBUG)
+
+    message(STATUS "DEBUG compile definition set!!")
+
+endif()
+
+
 
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL "macOS")
@@ -243,6 +287,9 @@ if(LINUX)
         list(APPEND app_common_dependencies
                 desktop_environment_gnome)
 
+        list(APPEND static_app_common_dependencies
+                static_desktop_environment_gnome)
+
         set(default_windowing "windowing_x11")
 
         add_compile_definitions(DESKTOP_ENVIRONMENT_GNOME)
@@ -256,6 +303,9 @@ if(LINUX)
 
         list(APPEND app_common_dependencies
                 desktop_environment_xfce)
+
+        list(APPEND static_app_common_dependencies
+                static_desktop_environment_xfce)
 
         set(default_windowing "windowing_x11")
 
@@ -271,6 +321,9 @@ if(LINUX)
         list(APPEND app_common_dependencies
                 desktop_environment_gnome)
 
+        list(APPEND static_app_common_dependencies
+                static_desktop_environment_gnome)
+
         set(default_windowing "windowing_x11")
 
         add_compile_definitions(DESKTOP_ENVIRONMENT_GNOME)
@@ -282,6 +335,9 @@ if(LINUX)
 
         list(APPEND app_common_dependencies
                 desktop_environment_kde)
+
+        list(APPEND static_app_common_dependencies
+                static_desktop_environment_kde)
 
         set(default_windowing "windowing_xcb")
 
@@ -295,6 +351,8 @@ if(LINUX)
 elseif(WIN32)
 
     set(app_common_dependencies)
+
+    set(static_app_common_dependencies)
 
 endif()
 
