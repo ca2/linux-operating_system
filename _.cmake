@@ -121,7 +121,7 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
 
         message(STATUS "UBUNTU has been set TRUE")
 
-        set(APPINDICATOR_PKG_MODULE "appindicator3-0.1")
+        set(APPINDICATOR_PKG_MODULE "ayatana-appindicator3-0.1")
 
         set(MPG123_PKG_MODULE "mpg123")
 
@@ -288,7 +288,10 @@ if(LINUX)
                 desktop_environment_gnome)
 
         list(APPEND static_app_common_dependencies
-                static_desktop_environment_gnome)
+                static_desktop_environment_gnome
+                static_node_gnome
+                static_node_gtk
+                static_windowing_x11)
 
         set(default_windowing "windowing_x11")
 
@@ -322,7 +325,10 @@ if(LINUX)
                 desktop_environment_gnome)
 
         list(APPEND static_app_common_dependencies
-                static_desktop_environment_gnome)
+                static_desktop_environment_gnome
+                static_node_gnome
+                static_node_gtk
+                static_windowing_x11)
 
         set(default_windowing "windowing_x11")
 
