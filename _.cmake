@@ -328,6 +328,7 @@ if(LINUX)
                 static_desktop_environment_gnome
                 static_node_gnome
                 static_node_gtk
+                static_node_linux
                 static_windowing_x11)
 
         set(default_windowing "windowing_x11")
