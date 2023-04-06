@@ -414,6 +414,7 @@ include_directories(${WORKSPACE_FOLDER}/operating_system/operating_system-${OPER
 include_directories(${WORKSPACE_FOLDER}/operating_system/third-${OPERATING_SYSTEM_NAME}/include)
 include_directories(${WORKSPACE_FOLDER}/operating_system/third-${OPERATING_SYSTEM_NAME}/third/include)
 include_directories(${WORKSPACE_FOLDER}/operating_system/third-${OPERATING_SYSTEM_NAME}/third/include/include)
+include_directories(${WORKSPACE_FOLDER}/operating_system/operating_system-${OPERATING_SYSTEM_NAME}/operating_system/${DISTRO})
 
 
 set(INCLUDE_DRAW2D_CAIRO TRUE)
