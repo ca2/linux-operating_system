@@ -5,6 +5,9 @@
 #set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CMAKE_COMMAND} -E time")
 
 
+set(STORE_FOLDER $ENV{HOME})
+
+
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 
     SET(CMAKE_CXX_FLAGS "-fPIC -fexceptions -fnon-call-exceptions -frtti")
