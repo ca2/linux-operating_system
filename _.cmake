@@ -5,9 +5,6 @@
 #set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CMAKE_COMMAND} -E time")
 
 
-set(STORE_FOLDER $ENV{HOME})
-
-
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 
     SET(CMAKE_CXX_FLAGS "-fPIC -fexceptions -fnon-call-exceptions -frtti")
@@ -126,7 +123,7 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
 
         set(APPINDICATOR_PKG_MODULE "ayatana-appindicator3-0.1")
 
-        set(MPG123_PKG_MODULE "mpg123")
+        set(MPG123_PKG_MODULE "libmpg123")
 
     elseif(${DISTRO} STREQUAL "debian")
 
@@ -324,8 +321,10 @@ if(LINUX)
 
     if(GNOME_DESKTOP)
 
+
         list(APPEND app_common_dependencies
                 desktop_environment_gnome)
+
 
         list(APPEND static_app_common_dependencies
                 static_desktop_environment_gnome
@@ -360,11 +359,28 @@ if(LINUX)
 
 elseif(WIN32)
 
-    set(app_common_dependencies)
 
+    set(app_common_dependencies)
     set(static_app_common_dependencies)
 
+
 endif()
+
+
+if (LINUX OR FREEBSD)
+
+    set(static_acme_extra_pkgconfig cairo xcb x11 xkbcommon xcb-render xcb-aux x11-xcb)
+    set(static_aura_posix_pkgconfig libstartup-notification-1.0)
+
+endif ()
+
+
+set(static_acme_pkgconfig freetype2 libidn ${static_acme_extra_pkgconfig} ncurses dbus-glib-1)
+set(static_apex_pkgconfig libcrypto libssl libarchive)
+set(static_database_cairo_pkgconfig freetype2 pango cairo pangocairo)
+set(static_database_sqlite3_pkgconfig sqlite3)
+set(static_mpg123_pkgconfig ${MPG123_PKG_MODULE})
+set(static_desktop_environment_gnome_pkgconfig glib-2.0 gtk+-3.0 gdk-3.0 ${APPINDICATOR_PKG_MODULE})
 
 
 if (MSVC)
@@ -423,6 +439,10 @@ include_directories(${WORKSPACE_FOLDER}/operating_system/operating_system-${OPER
 
 set(INCLUDE_DRAW2D_CAIRO TRUE)
 set(INCLUDE_IMAGING_FREEIMAGE TRUE)
+
+
+set(STORE_FOLDER $ENV{HOME}/store/${SLASHED_OPERATING_SYSTEM})
+
 
 
 
