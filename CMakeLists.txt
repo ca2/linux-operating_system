@@ -38,7 +38,7 @@ endif()
 add_subdirectory(operating_system-posix/write_text_pango)
 add_subdirectory(operating_system-posix/audio_alsa)
 add_subdirectory(operating_system-linux/audio_mixer_alsa)
-add_subdirectory(operating_system-linux/music_midi_alsa)
+add_subdirectory(operating_system-posix/music_midi_alsa)
 
 
 
