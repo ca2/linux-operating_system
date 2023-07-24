@@ -37,8 +37,12 @@ endif()
 
 add_subdirectory(operating_system-posix/write_text_pango)
 add_subdirectory(operating_system-posix/audio_alsa)
-add_subdirectory(operating_system-linux/audio_mixer_alsa)
+if(${HAS_AUDIO_SYSTEM})
+    add_subdirectory(operating_system-linux/audio_mixer_alsa)
+endif()
+if(${HAS_APP_VERIWELL})
 add_subdirectory(operating_system-posix/music_midi_alsa)
+endif()
 
 
 
