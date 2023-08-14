@@ -1,6 +1,3 @@
-#cmake_minimum_required(VERSION 3.16)
-#project(_linux-operating_system)
-
 
 #set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CMAKE_COMMAND} -E time")
 
