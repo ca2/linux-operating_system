@@ -255,6 +255,11 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
     #add_compile_definitions(default_music_midi=music_midi_alsa)
     #add_compile_definitions(default_node=node_linux)
 
+    list(APPEND app_common_dependencies
+       desktop_environment_gnome
+    default_node)
+
+
 
 elseif(WIN32)
 
