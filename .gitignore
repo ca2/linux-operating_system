@@ -29,5 +29,4 @@ Thumbs.db
 deployment.rc
 CMakeCache.txt
 Makefile
-*.cmake
 *.a
