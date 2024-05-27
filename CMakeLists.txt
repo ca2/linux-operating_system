@@ -65,5 +65,19 @@ if(${HAS_APP_VERIWELL})
 add_subdirectory(operating_system-posix/music_midi_alsa)
 endif()
 
+add_subdirectory(operating_system-posix/nano_http_libcurl)
+add_subdirectory(operating_system-posix/nano_http_command_line)
 
 
+add_subdirectory(operating_system-posix/windowing_system_x11)
+add_subdirectory(operating_system-posix/nano_user_x11)
+
+add_subdirectory(operating_system-posix/windowing_system_xcb)
+add_subdirectory(operating_system-posix/nano_user_xcb)
+
+if(${HAS_WAYLAND})
+
+    add_subdirectory(operating_system-posix/windowing_system_wayland)
+    add_subdirectory(operating_system-posix/nano_user_wayland)
+
+endif()
