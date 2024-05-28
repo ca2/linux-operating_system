@@ -11,18 +11,21 @@ add_subdirectory(operating_system-posix/aura_posix)
 add_subdirectory(operating_system-linux/aura_linux)
 if(LXDE_DESKTOP)
     add_subdirectory(operating_system-posix/windowing_x11)
+    add_subdirectory(operating_system-posix/node_gdk)
     add_subdirectory(operating_system-posix/node_gtk)
     add_subdirectory(operating_system-posix/node_gnome)
     add_subdirectory(operating_system-linux/desktop_environment_gnome)
 endif()
 if(XFCE_DESKTOP)
     add_subdirectory(operating_system-posix/windowing_x11)
+    add_subdirectory(operating_system-posix/node_gdk)
     add_subdirectory(operating_system-posix/node_gtk3)
     add_subdirectory(operating_system-posix/node_xfce)
     add_subdirectory(operating_system-linux/desktop_environment_xfce)
 endif()
 if(GNOME_DESKTOP)
     add_subdirectory(operating_system-posix/windowing_x11)
+    add_subdirectory(operating_system-posix/node_gdk)
     if(${HAS_WAYLAND})
         add_subdirectory(operating_system-posix/windowing_wayland)
     endif()
@@ -67,6 +70,11 @@ endif()
 
 add_subdirectory(operating_system-posix/nano_http_libcurl)
 add_subdirectory(operating_system-posix/nano_http_command_line)
+
+add_subdirectory(operating_system-posix/nano_compress_command_line)
+
+
+add_subdirectory(operating_system-posix/nano_user_cairo)
 
 
 add_subdirectory(operating_system-posix/windowing_system_x11)
