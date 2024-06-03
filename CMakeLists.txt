@@ -4,6 +4,7 @@ project(linux-operating_system)
 
 add_subdirectory(operating_system-posix/nano_account_posix)
 add_subdirectory(operating_system-posix/nano_dynamic_library_dl)
+add_subdirectory(operating_system-posix/nano_dynamic_library_dl_null)
 
 add_subdirectory(operating_system-linux/node_linux)
 add_subdirectory(operating_system-posix/acme_posix)
