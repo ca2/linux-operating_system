@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.16)
-project(linux-operating_system)
 
 
 add_subdirectory(operating_system-posix/nano_account_posix)
