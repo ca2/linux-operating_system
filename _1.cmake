@@ -18,11 +18,11 @@ if($ENV{XDG_CURRENT_DESKTOP} STREQUAL "KDE")
     message(STATUS "System is KDE")
     set(DESKTOP_ENVIRONMENT_NAME "kde")
 elseif($ENV{XDG_CURRENT_DESKTOP} STREQUAL "ubuntu:GNOME")
-    set(GNOME_DESKTOP TRUE)
+    set(GTK_BASED_DESKTOP TRUE)
     message(STATUS "System is GNOME")
     set(DESKTOP_ENVIRONMENT_NAME "gnome")
 elseif($ENV{XDG_CURRENT_DESKTOP} STREQUAL "GNOME")
-    set(GNOME_DESKTOP TRUE)
+    set(GTK_BASED_DESKTOP TRUE)
     message(STATUS "System is GNOME")
     set(DESKTOP_ENVIRONMENT_NAME "gnome")
 elseif($ENV{XDG_CURRENT_DESKTOP} STREQUAL "LXDE")
@@ -175,7 +175,7 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
 
     endif()
 
-    if(GNOME_DESKTOP)
+    if(GTK_BASED_DESKTOP)
 
         message(STATUS "Adding GNOME/X11 dependency.")
 
@@ -255,7 +255,7 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
     #add_compile_definitions(default_node=node_linux)
 
     list(APPEND app_common_dependencies
-       desktop_environment_gnome
+       desktop_environment_gtk_based
     default_node)
 
 
@@ -291,7 +291,7 @@ if(LINUX)
     if(LXDE_DESKTOP)
 
         list(APPEND app_common_dependencies
-                desktop_environment_gnome)
+                desktop_environment_gtk_based)
 
         list(APPEND static_app_common_dependencies
                 static_desktop_environment_gnome
@@ -301,7 +301,7 @@ if(LINUX)
 
         set(default_windowing "windowing_x11")
 
-        add_compile_definitions(DESKTOP_ENVIRONMENT_GNOME)
+        add_compile_definitions(DESKTOP_ENVIRONMENT_GTK_BASED)
 
         add_compile_definitions(default_windowing=windowing_x11)
 
@@ -325,11 +325,11 @@ if(LINUX)
     endif()
 
 
-    if(GNOME_DESKTOP)
+    if(GTK_BASED_DESKTOP)
 
 
         list(APPEND app_common_dependencies
-                desktop_environment_gnome)
+                desktop_environment_gtk_based)
 
 
         list(APPEND static_app_common_dependencies
@@ -341,7 +341,7 @@ if(LINUX)
 
         set(default_windowing "windowing_x11")
 
-        add_compile_definitions(DESKTOP_ENVIRONMENT_GNOME)
+        add_compile_definitions(DESKTOP_ENVIRONMENT_GTK_BASED)
 
     endif()
 
