@@ -5,14 +5,24 @@ add_subdirectory(operating_system-posix/nano_account_posix)
 add_subdirectory(operating_system-posix/nano_dynamic_library_dl)
 add_subdirectory(operating_system-posix/nano_dynamic_library_dl_null)
 
-add_subdirectory(operating_system-linux/node_linux)
+
+add_subdirectory(operating_system-posix/nano_http_command_line)
+
+add_subdirectory(operating_system-posix/nano_compress_command_line)
+
+
 add_subdirectory(operating_system-posix/acme_posix)
 add_subdirectory(operating_system-linux/acme_linux)
+
+if(NOT ${CONSOLE_BUILD_TOOLS})
+    # CONSOLE_BUILD_TOOLS are dependant just on linux kernel version and glib version?
+
 add_subdirectory(operating_system-posix/apex_posix)
 add_subdirectory(operating_system-linux/apex_linux)
 add_subdirectory(operating_system-posix/aura_posix)
 add_subdirectory(operating_system-linux/aura_linux)
 add_subdirectory(operating_system-posix/windowing_posix)
+add_subdirectory(operating_system-linux/node_linux)
 if(LXDE_DESKTOP)
     add_subdirectory(operating_system-posix/windowing_x11)
     add_subdirectory(operating_system-posix/node_gdk)
@@ -89,9 +99,6 @@ add_subdirectory(operating_system-posix/music_midi_alsa)
 endif()
 
 add_subdirectory(operating_system-posix/nano_http_libcurl)
-add_subdirectory(operating_system-posix/nano_http_command_line)
-
-add_subdirectory(operating_system-posix/nano_compress_command_line)
 
 
 add_subdirectory(operating_system-posix/nano_user_cairo)
@@ -107,5 +114,8 @@ if(${HAS_WAYLAND})
 
     add_subdirectory(operating_system-posix/windowing_system_wayland)
     add_subdirectory(operating_system-posix/nano_user_wayland)
+
+endif()
+
 
 endif()
