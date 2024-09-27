@@ -109,7 +109,7 @@ endif()
 add_subdirectory(operating_system-posix/nano_http_libcurl)
 
 
-add_subdirectory(operating_system-posix/nano_user_cairo)
+add_subdirectory(operating_system-posix/nano_graphics_cairo)
 
 
 add_subdirectory(operating_system-posix/windowing_system_x11)
