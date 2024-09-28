@@ -14,6 +14,16 @@ add_subdirectory(operating_system-posix/nano_compress_command_line)
 add_subdirectory(operating_system-posix/acme_posix)
 add_subdirectory(operating_system-linux/acme_linux)
 
+if(${HAS_GTK4})
+    add_subdirectory(operating_system-posix/nano_user_gtk4)
+elseif(${HAS_GTK3})
+    add_subdirectory(operating_system-posix/nano_user_gtk3)
+elseif(${HAS_KDE6})
+    add_subdirectory(operating_system-posix/nano_user_kde6)
+elseif(${HAS_KDE5})
+    add_subdirectory(operating_system-posix/nano_user_kde5)
+endif()
+
 if(NOT ${CONSOLE_BUILD_TOOLS})
     # CONSOLE_BUILD_TOOLS are dependant just on linux kernel version and glib version?
 
@@ -101,7 +111,7 @@ endif()
 add_subdirectory(operating_system-posix/nano_http_libcurl)
 
 
-add_subdirectory(operating_system-posix/nano_user_cairo)
+add_subdirectory(operating_system-posix/nano_graphics_cairo)
 
 
 add_subdirectory(operating_system-posix/windowing_system_x11)
