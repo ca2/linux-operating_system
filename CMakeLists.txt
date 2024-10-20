@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 
 add_subdirectory(operating_system-posix/nano_account_posix)
-add_subdirectory(operating_system-posix/nano_dynamic_library_dl)
+#add_subdirectory(operating_system-posix/nano_dynamic_library_dl)
 add_subdirectory(operating_system-posix/nano_dynamic_library_dl_null)
 
 
