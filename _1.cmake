@@ -255,7 +255,7 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
     #add_compile_definitions(default_node=node_linux)
 
     list(APPEND app_common_dependencies
-       desktop_environment_gtk_based
+       operating_ambient_gtk_based
     default_node)
 
 
@@ -291,7 +291,7 @@ if(LINUX)
     if(LXDE_DESKTOP)
 
         list(APPEND app_common_dependencies
-                desktop_environment_gtk_based)
+                operating_ambient_gtk_based)
 
         list(APPEND static_app_common_dependencies
                 static_desktop_environment_gnome
@@ -329,7 +329,7 @@ if(LINUX)
 
 
         list(APPEND app_common_dependencies
-                desktop_environment_gtk_based)
+                operating_ambient_gtk_based)
 
 
         list(APPEND static_app_common_dependencies
