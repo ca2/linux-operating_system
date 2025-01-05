@@ -348,17 +348,30 @@ if(LINUX)
 
     if(KDE_DESKTOP)
 
+       if(${HAS_KDE5})
         list(APPEND app_common_dependencies
-                desktop_environment_kde)
+                operating_ambient_kde5)
 
         list(APPEND static_app_common_dependencies
-                static_desktop_environment_kde)
+                static_operating_ambient_kde5)
+        add_compile_definitions(default_windowing=windowing_kde5)
+        set(default_windowing "windowing_kde5")
+        add_compile_definitions(DESKTOP_ENVIRONMENT_KDE=5)
+        elseif(${HAS_KDE6})
+           list(APPEND app_common_dependencies
+              operating_ambient_kde6)
 
-        set(default_windowing "windowing_xcb")
+           list(APPEND static_app_common_dependencies
+              static_operating_ambient_kde6)
+           add_compile_definitions(default_windowing=windowing_kde6)
+           set(default_windowing "windowing_kde6")
+           add_compile_definitions(DESKTOP_ENVIRONMENT_KDE=6)
 
-        add_compile_definitions(DESKTOP_ENVIRONMENT_KDE)
 
-        add_compile_definitions(default_windowing=windowing_xcb)
+       endif()
+
+
+
 
     endif()
 
