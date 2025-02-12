@@ -25,10 +25,10 @@ add_subdirectory(operating_system-linux/acme_linux)
 #    add_subdirectory(operating_system-posix/acme_windowing_kde5)
 #endif()
 
-if(NOT ${CONSOLE_BUILD_TOOLS})
-    # CONSOLE_BUILD_TOOLS are dependant just on linux kernel version and glib version?
+if(${DESKTOP_AMBIENT})
+    # DESKTOP_AMBIENT are dependant just on linux kernel version and glib version?
 
-    message(STATUS "operating_system/CMakeLists.txt NOT CONSOLE_BUILD_TOOLS")
+    message(STATUS "operating_system/CMakeLists.txt DESKTOP_AMBIENT is set")
 
 add_subdirectory(operating_system-posix/apex_posix)
 add_subdirectory(operating_system-linux/apex_linux)
