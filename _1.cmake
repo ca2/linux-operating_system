@@ -285,7 +285,7 @@ elseif (UWP)
 endif ()
 
 
-if(LINUX)
+if(${LINUX})
 
 
     if(LXDE_DESKTOP)
