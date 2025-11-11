@@ -1,3 +1,5 @@
+#Created with chatgpt by camilo by 2025-11 <3ThomasBorregaardSørensen!!
+
 
 # toolchain.cmake
 
