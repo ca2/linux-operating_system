@@ -195,3 +195,12 @@ endif()
 
 
 endif()
+
+
+add_subdirectory(operating_system-posix/innate_ui_xaw)
+add_subdirectory(operating_system-posix/windowing_x11)
+add_subdirectory(operating_system-posix/node_x11)
+add_subdirectory(operating_system-linux/operating_ambient_x11)
+
+
+
