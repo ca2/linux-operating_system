@@ -402,7 +402,7 @@ set(static_mpg123_pkgconfig ${MPG123_PKG_MODULE})
 set(static_desktop_environment_gnome_pkgconfig glib-2.0 gtk+-3.0 gdk-3.0 ${APPINDICATOR_PKG_MODULE})
 
 
-if (MSVC)
+if(${WIN32})
     set(LIBCXX_TARGETING_MSVC ON)
 else ()
     set(LIBCXX_TARGETING_MSVC OFF)
