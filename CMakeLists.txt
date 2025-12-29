@@ -102,7 +102,7 @@ elseif(${KDE_DESKTOP})
         add_subdirectory(operating_system-linux/operating_ambient_kde5)
 
     endif()
-elseif(${LXQ_DESKTOP})
+elseif(${LXQT_DESKTOP})
     add_subdirectory(operating_system-posix/acme_windowing_q)
     add_subdirectory(operating_system-posix/innate_ui_q)
     add_subdirectory(operating_system-posix/windowing_q)
