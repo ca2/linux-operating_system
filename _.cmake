@@ -1,9 +1,4 @@
 
-if(${WITH_GPU_AND_GRAPHICS3D})
-
-set(WITH_OPENGL TRUE)
-
-endif()
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
 
