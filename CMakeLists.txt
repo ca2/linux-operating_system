@@ -14,6 +14,9 @@ add_subdirectory(operating_system-posix/nano_compress_command_line)
 add_subdirectory(operating_system-posix/acme_posix)
 add_subdirectory(operating_system-linux/acme_linux)
 
+add_subdirectory(operating_system-posix/apex_posix)
+add_subdirectory(operating_system-linux/apex_linux)
+
 #if(${HAS_GTK4})
 #
 #elseif(${HAS_GTK3})
@@ -30,8 +33,6 @@ if(${DESKTOP_AMBIENT})
 
     message(STATUS "operating_system/CMakeLists.txt DESKTOP_AMBIENT is set")
 
-add_subdirectory(operating_system-posix/apex_posix)
-add_subdirectory(operating_system-linux/apex_linux)
 add_subdirectory(operating_system-posix/aura_posix)
 add_subdirectory(operating_system-linux/aura_linux)
 add_subdirectory(operating_system-posix/windowing_posix)
