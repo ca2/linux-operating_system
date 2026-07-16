@@ -17,6 +17,8 @@ add_subdirectory(operating_system-linux/acme_linux)
 add_subdirectory(operating_system-posix/apex_posix)
 add_subdirectory(operating_system-linux/apex_linux)
 
+add_subdirectory(operating_system-posix/accessibility_gtk4)
+
 #if(${HAS_GTK4})
 #
 #elseif(${HAS_GTK3})
@@ -203,6 +205,5 @@ add_subdirectory(operating_system-posix/innate_ui_motif)
 add_subdirectory(operating_system-posix/windowing_x11)
 add_subdirectory(operating_system-posix/node_x11)
 add_subdirectory(operating_system-linux/operating_ambient_x11)
-
 
 
