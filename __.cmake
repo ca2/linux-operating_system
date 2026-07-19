@@ -1,5 +1,7 @@
 #Changed by camilo on 2025-11-09 00:27 <3ThomasBorregaardSørensen!!
 
+set(DEBIAN_LIKE FALSE)
+set(UBUNTU_LIKE FALSE)
 
 if(${WITH_GPU_AND_GRAPHICS3D})
 
