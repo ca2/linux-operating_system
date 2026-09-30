@@ -202,7 +202,6 @@ if(${HAS_WAYLAND})
 endif()
 
 
-endif()
 
 
 add_subdirectory(operating_system-posix/innate_ui_motif)
