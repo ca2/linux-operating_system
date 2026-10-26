@@ -187,7 +187,6 @@ add_subdirectory(operating_system-posix/nano_http_libcurl)
 
 add_subdirectory(operating_system-posix/nano_graphics_cairo)
 
-
 #add_subdirectory(operating_system-posix/windowing_system_x11)
 add_subdirectory(operating_system-posix/acme_windowing_x11)
 
