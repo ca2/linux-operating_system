@@ -1,3 +1,4 @@
+option(CA2_NATIVE_WAYLAND "Build standalone native Wayland backend" ON)
 cmake_minimum_required(VERSION 3.16)
 
 
@@ -193,10 +194,14 @@ add_subdirectory(operating_system-posix/acme_windowing_x11)
 #add_subdirectory(operating_system-posix/windowing_system_xcb)
 add_subdirectory(operating_system-posix/acme_windowing_xcb)
 
-if(${HAS_WAYLAND})
+if(CA2_NATIVE_WAYLAND)
 
-    #add_subdirectory(operating_system-posix/windowing_system_wayland)
+    # Standalone backend, independent of toolkit windowing.
+    add_subdirectory(operating_system-linux/operating_ambient_wayland)
     add_subdirectory(operating_system-posix/acme_windowing_wayland)
+    if(NOT TARGET windowing_wayland)
+       add_subdirectory(operating_system-posix/windowing_wayland)
+    endif()
 
 endif()
 
